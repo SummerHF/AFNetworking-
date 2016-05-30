@@ -30,7 +30,7 @@
         
     } progress:^(float progress) {
        
-        NSLog(@"%f",progress);
+        MyLog(@"%f",progress);
         
     }];
     

@@ -112,6 +112,7 @@
  *  @param paraments    请求的参数
  *  @param successBlock 请求成功的回调
  *  @param failureBlock 请求失败的回调
+ *  @param progress 进度
  */
 
 +(void)requestWithType:(HttpRequestType)type withUrlString:(NSString *)urlString withParaments:(id)paraments withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock progress:(downloadProgress)progress
