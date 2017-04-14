@@ -9,8 +9,8 @@
 * [My csdn url ](http://blog.csdn.net/zhuhaifei391565521)
 
 -----------------------------------
-##关于AFNetworking 3.0
-###NSURLConnection的API已废弃
+## 关于AFNetworking 3.0
+### NSURLConnection的API已废弃
 -----------------------------------
 
 *AFNetworking 1.0* 是建立在 *NSURLConnection*基础上的，*AFNetworking 2.0* 开始使用基于 *NSURLConnection *API基础功能，同时也有基于新的*NSURLSession* API 的功能实现。AFNetworking 3.0现在是专门建立在 *NSURLSession* 顶层的，这降低了维护负担，同时允许支持苹果为 *NSURLSession* 提供的任何额外的增强的特性。在*Xcode 7*，*NSURLConnection API* 已经被苹果官方弃用。然而API函数将继续使用不会受影响，只不过再也不会添加新的功能了，苹果建议所有基于网络的功能在未来都能使用 *NSURLSession*。
@@ -23,7 +23,7 @@
 • AFHTTPRequestOperationManager
 
 -----------------------------------
-###转而替代的是
+### 转而替代的是
 
 • AFURLSessionManager
 • AFHTTPSessionManager
@@ -32,7 +32,7 @@
 >所有的请求方法都在`NetWorkManager.m`进行统一设置，并且全部为类方法(调用方便)
 
 -----------------------------------
-##tips
+## tips
 >1.设置网路请求的`BaseURL`,请移步`Supporting Files`-->`const.h`中进行修改
 
 ```swift 
@@ -51,16 +51,16 @@
 
 ```
 -----------------------------------
-##主要实现的功能
->1.文件下载
->2.多图压缩上传
->3.视频上传（文件上传,音频上传类似）
->4.取消所有的网络请求
->5.取消指定的网络请求
-`暂未考虑缓存请求到的数据`
+## 主要实现的功能
+> 1.文件下载
+> 2.多图压缩上传
+> 3.视频上传（文件上传,音频上传类似）
+> 4.取消所有的网络请求
+> 5.取消指定的网络请求
+ `暂未考虑缓存请求到的数据`
 -----------------------------------
 
-###基本的*post*,*get*请求
+### 基本的*post*,*get*请求
 ```swift 
 /**
  *  网络请求的实例方法
@@ -75,7 +75,7 @@
 +(void)requestWithType:(HttpRequestType)type withUrlString:(NSString *)urlString withParaments:(id)paraments withSuccessBlock:( requestSuccess)successBlock withFailureBlock:( requestFailure)failureBlock progress:(downloadProgress)progress;
    
 ```
-###基本的*post*,*get*请求实现
+### 基本的*post*,*get*请求实现
 
 ```swift
 /**
@@ -140,7 +140,8 @@
 }
 
 ```
-###上传图片
+### 上传图片
+
 ```swift
 /**
  *  上传图片
@@ -158,7 +159,8 @@
 
 
 ```
-###上传图片实现
+### 上传图片实现
+
 ```swift
 /**
  *  上传图片
@@ -210,7 +212,8 @@
     }];
 }
 ```
-###视频上传
+### 视频上传
+
 ```
 /**
  *  视频上传
@@ -224,7 +227,8 @@
  */
 +(void)uploadVideoWithOperaitons:(NSDictionary *)operations withVideoPath:(NSString *)videoPath withUrlString:(NSString *)urlString withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock withUploadProgress:(uploadProgress)progress;
 ```
-###视频上传实现
+### 视频上传实现
+
 ```
 /**
  *  视频上传
@@ -317,7 +321,8 @@
 }
 ```
 
-###文件下载
+### 文件下载
+
 ```
 #pragma mark - 文件下载
 
@@ -336,7 +341,8 @@
 +(void)downLoadFileWithOperations:(NSDictionary *)operations withSavaPath:(NSString *)savePath withUrlString:(NSString *)urlString withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock withDownLoadProgress:(downloadProgress)progress
 
 ```
-###文件下载实现
+### 文件下载实现
+
 ```
 
 /**
@@ -378,7 +384,8 @@
 }
 
 ```
-###取消指定的`url`请求
+### 取消指定的`url`请求
+
 ```swift
 /**
  *  取消指定的url请求
@@ -390,7 +397,7 @@
 +(void)cancelHttpRequestWithRequestType:(NSString *)requestType requestUrlString:(NSString *)string;
 
 ```
-###取消指定的`url`请求实现
+### 取消指定的`url`请求实现
 ```swift
 /**
  *  取消指定的url请求
@@ -437,7 +444,7 @@
 * [基于AFNetworking 3.0的集约性网络请求API再封装 支持多图压缩上传,视频,音频上传,文件下载等功能](https://github.com/SummerHF/AFNetworking-.git)
 
 -----------------------------------
-##notice
+## notice
 >1.以上代码仅供参考,如果有任何你觉得不对的地方，都可以联系我,我会第一时间回复，谢谢.
 >qq:`391565521`  email:`zhuhaifei_ios@163.com`
 
